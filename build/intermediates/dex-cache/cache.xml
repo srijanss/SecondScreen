@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="E:\AndroidStudioProjects\SocialDisplays-master\app\libs\InkCaseLib_old.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="59a3d1431e61e090481c5bf9fee8203577351072">
-        <dex dex="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\pre-dexed\release\InkCaseLib_old-3cf563bb8669832c2778379cdf3e8bd2446f950d.jar" />
-    </item>
-    <item
-        jar="E:\Users\Samu\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\pre-dexed\release\support-annotations-21.0.3-23ca5e453ee9109b3405a2e75864ea0efa5f4b8d.jar" />
-    </item>
-    <item
-        jar="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\pre-dexed\release\internal_impl-21.0.3-6f3029303451a4d32f2da363ef3f3c10e4d349c2.jar" />
-    </item>
-    <item
-        jar="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jar="/media/windows/git_server/Dropbox/TUT/Semester2/Demola/SecondScreen/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\pre-dexed\release\classes-3241931adb5a04a07ea6be40fd2c799ac5118979.jar" />
+        <dex dex="/media/windows/git_server/Dropbox/TUT/Semester2/Demola/SecondScreen/app/build/intermediates/pre-dexed/debug/classes-8bd423d04c8bb247d3874e2dc49d1f8f85492c1b.jar" />
+    </item>
+    <item
+        jar="/home/srijan/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/media/windows/git_server/Dropbox/TUT/Semester2/Demola/SecondScreen/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-cc697cebc990276e45d1f76b03fecc4970549679.jar" />
+    </item>
+    <item
+        jar="/home/srijan/AndroidStudioProjects/SecondScreen/app/libs/InkCaseLib/InkCaseLib.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="59a3d1431e61e090481c5bf9fee8203577351072">
+        <dex dex="/media/windows/git_server/Dropbox/TUT/Semester2/Demola/SecondScreen/app/build/intermediates/pre-dexed/debug/InkCaseLib-382801e3ce9df0da9d3a850a37d92c532351e42d.jar" />
+    </item>
+    <item
+        jar="/media/windows/git_server/Dropbox/TUT/Semester2/Demola/SecondScreen/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/media/windows/git_server/Dropbox/TUT/Semester2/Demola/SecondScreen/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-6e1b3044819da3aae7b7dfdc30075ef388636f17.jar" />
     </item>
 
 </items>
