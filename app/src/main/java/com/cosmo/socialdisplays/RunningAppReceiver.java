@@ -19,6 +19,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -40,10 +41,12 @@ public class RunningAppReceiver extends BroadcastReceiver {
     Drawable icon = null;
     String applicationName;
     static String packageName;
-    
+    boolean keep;
+
     @SuppressWarnings("static-access")
 	@Override
-    public void onReceive(Context mContext, Intent anIntent) {
+
+     public void onReceive(Context mContext, Intent anIntent) {
     	this.mContext = mContext;
 
     	MainActivity mActivity = MainActivity.instance;
@@ -110,7 +113,7 @@ public class RunningAppReceiver extends BroadcastReceiver {
     	// Creates a bitmap file using the icon and the name of the app
     	// and sends it to be displayed on the InkCase
     	
-    	String[] parts = splitIntoLines(name, 9);
+    	String[] parts = splitIntoLines(name, 7);
     	
         Bitmap bitmap = null;
         bitmap = drawableToBitmap(icon);
