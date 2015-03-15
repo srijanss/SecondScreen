@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="InkCaseLib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/InkCaseLib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

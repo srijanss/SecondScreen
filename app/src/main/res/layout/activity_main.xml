@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center">
- 
+
     <TextView
         android:id="@+id/main_text_view1"
         android:layout_width="wrap_content"
@@ -16,7 +16,7 @@
         android:text="Enable Second Screen"
         android:id="@+id/on_off_switch"
         android:checked="false"
-        android:onClick="onToggleClicked"/>
+        android:onClick="onToggleClicked" />
 
     <TextView
         android:layout_width="wrap_content"

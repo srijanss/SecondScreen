@@ -21,7 +21,10 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.gajah.inkcaseLib.InkCase;
 import com.gajah.inkcaseLib.InkCaseUtils;
@@ -51,8 +54,8 @@ public class RunningAppReceiver extends BroadcastReceiver {
 
     	MainActivity mActivity = MainActivity.instance;
     	packageName = mActivity.currentAppName;
-    	
-    	try {
+
+        try {
     		PackageManager pm = mContext.getPackageManager();
     		
     		// Get a list of the running apps
@@ -102,13 +105,14 @@ public class RunningAppReceiver extends BroadcastReceiver {
             }
  
         } catch (Throwable t) {
-            Log.i(TAG, "Throwable caught: "
-                        + t.getMessage(), t);
+            Log.i(TAG, "Throwable caught: " + t.getMessage(), t);
         }
     	
          
     }
-    
+
+
+
     public void sendToInkCase(Drawable icon, String name) {
     	// Creates a bitmap file using the icon and the name of the app
     	// and sends it to be displayed on the InkCase

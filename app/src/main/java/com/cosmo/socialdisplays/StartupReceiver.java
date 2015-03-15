@@ -30,11 +30,9 @@ public class StartupReceiver extends BroadcastReceiver {
                 PendingIntent ServiceManagementIntent = PendingIntent.getBroadcast(context,
                         startupID, i7, 0);
                 alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME,
-                        SystemClock.elapsedRealtime(), 
-                        2000, ServiceManagementIntent);
-                 
-                 
-            } catch (Exception e) {
+                        SystemClock.elapsedRealtime(), 2000, ServiceManagementIntent);
+
+        } catch (Exception e) {
                 Log.i(TAG, "Exception : "+e);
             }
              
