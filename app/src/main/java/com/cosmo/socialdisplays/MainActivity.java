@@ -1,6 +1,6 @@
 package com.cosmo.socialdisplays;
 
-import android.app.Activity;
+import android.support.v7.app.ActionBarActivity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -17,15 +17,14 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
-
 import com.gajah.inkcaseLib.InkCase;
 import com.gajah.inkcaseLib.InkCaseUtils;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -33,7 +32,7 @@ import java.io.InputStream;
 import java.util.List;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
     public final String TAG = "MainActivity";
     public List<Drawable> icons = null;
@@ -46,7 +45,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new PlaceholderFragment())
+                    .commit();
+        }
         currentAppName = "";
         instance = this;
 /*
@@ -72,8 +75,6 @@ public class MainActivity extends Activity {
         // boolean on = ((Switch) view).onTouchEvent();
 
         TextView debugTextView1 = (TextView) findViewById(R.id.debugtextView);
-        TextView debugTextView2 = (TextView) findViewById(R.id.debugtextView2);
-        debugTextView2.setText("onToggleClicked activated.");
 
         // Still experimenting how to turn off the receivers if the slider is in off position -MH
 
@@ -83,22 +84,23 @@ public class MainActivity extends Activity {
             registerReceiver(mScreenReceiver, screenOffFilter);
 
             initialize();
-            debugTextView1.setText("Toggle is on!!"); // Debug text - to be deleted
+            debugTextView1.setText("App is sending info to the Second Screen."); // Debug text - to be deleted
         } else {
 
-            // Does this work? Yet to be tested with InkScreen...
             // Setting up the intent call
             Intent i7 = new Intent(this, RunningAppReceiver.class);
             PendingIntent ServiceManagementIntent = PendingIntent.getBroadcast(this,
                     1111111, i7, 0);
             AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-
             // Cancelling a repeating alarm in StartupReceiver
             alarmManager.cancel(ServiceManagementIntent);
 
-            this.unregisterReceiver(mScreenReceiver);
+            // Separate disengaging measure to unregister the receiver registered at if(on)
+            // Not really necessary? No change during testing if enabled or not. -MH
+            // By definition, Receivers should "fade off" by themselves. -MH
+            // this.unregisterReceiver(mScreenReceiver);
 
-            debugTextView1.setText("Toggle is off..."); // Debug text - to be deleted
+            debugTextView1.setText("App is inactive."); // Debug text - to be deleted
         }
     }
 
@@ -165,5 +167,17 @@ public class MainActivity extends Activity {
         drawable.draw(canvas);
 
         return bitmap;
+    }
+    public static class PlaceholderFragment extends android.support.v4.app.Fragment {
+
+        public PlaceholderFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            return rootView;
+        }
     }
 }
