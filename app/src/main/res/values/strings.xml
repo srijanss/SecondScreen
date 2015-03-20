@@ -8,5 +8,11 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_layout_swipe">LayoutSwipe</string>
+
+
+    <string name="title_section1">Start</string>
+    <string name="title_section2">Actions</string>
+    <string name="title_section3">Grouping</string>
 
 </resources>
