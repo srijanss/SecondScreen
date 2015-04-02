@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Social"
+        android:id="@+id/textView2"
+        android:layout_marginTop="44dp"
+        android:textSize="28dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Add to this mode"
+        android:id="@+id/textView3"
+        android:textSize="28dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView_socialapp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textView3"
+        android:background="@color/material_deep_teal_200"
+        android:clickable="true"
+        android:fastScrollEnabled="true" />
+
+</RelativeLayout><!-- From: file:/D:/Dropbox/TTY/Demola/SecondScreen.git/app/src/main/res/layout/fragment_third.xml -->

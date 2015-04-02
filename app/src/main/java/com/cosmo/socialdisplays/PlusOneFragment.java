@@ -58,11 +58,11 @@ public class PlusOneFragment extends android.support.v4.app.Fragment {
      * @return A new instance of fragment PlusOneFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static PlusOneFragment newInstance(String param1, String param2) {
+    private static final String ARG_SECTION_NUMBER = "section_number";
+    public static PlusOneFragment newInstance(int sectionNumber) {
         PlusOneFragment fragment = new PlusOneFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }

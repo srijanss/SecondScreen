@@ -9,11 +9,25 @@
         <dex dex="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\pre-dexed\release\InkCaseLib_old-3cf563bb8669832c2778379cdf3e8bd2446f950d.jar" />
     </item>
     <item
-        jar="E:\Users\Samu\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jar="D:\Dropbox\TTY\Demola\SecondScreen.git\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\pre-dexed\release\support-annotations-21.0.3-23ca5e453ee9109b3405a2e75864ea0efa5f4b8d.jar" />
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="D:\Dropbox\TTY\Demola\SecondScreen.git\app\build\intermediates\pre-dexed\debug\classes-d33d97029c1bfff42ea340d5ae3e2f095651fe46.jar" />
+    </item>
+    <item
+        jar="D:\Dropbox\TTY\Demola\SecondScreen.git\app\libs\InkCaseLib.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="59a3d1431e61e090481c5bf9fee8203577351072">
+        <dex dex="D:\Dropbox\TTY\Demola\SecondScreen.git\app\build\intermediates\pre-dexed\debug\InkCaseLib-65e727d4cf57eccaa89b6bab09dfe7d417e5dee1.jar" />
+    </item>
+    <item
+        jar="D:\Dropbox\TTY\Demola\SecondScreen.git\app\libs\InkCaseLib_old.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="59a3d1431e61e090481c5bf9fee8203577351072">
+        <dex dex="D:\Dropbox\TTY\Demola\SecondScreen.git\app\build\intermediates\pre-dexed\release\InkCaseLib_old-9cb3b7b24b5a2416143b3efcecd62ce93a5a8197.jar" />
     </item>
     <item
         jar="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
@@ -23,11 +37,39 @@
         <dex dex="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\pre-dexed\release\internal_impl-21.0.3-6f3029303451a4d32f2da363ef3f3c10e4d349c2.jar" />
     </item>
     <item
+        jar="D:\Dropbox\TTY\Demola\SecondScreen.git\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="D:\Dropbox\TTY\Demola\SecondScreen.git\app\build\intermediates\pre-dexed\debug\classes-e9a13f3648ab538b95342ff411eb69fbeb0e09a2.jar" />
+    </item>
+    <item
+        jar="E:\Users\Samu\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\pre-dexed\release\support-annotations-21.0.3-23ca5e453ee9109b3405a2e75864ea0efa5f4b8d.jar" />
+    </item>
+    <item
         jar="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
         <dex dex="E:\AndroidStudioProjects\SocialDisplays-master\app\build\intermediates\pre-dexed\release\classes-3241931adb5a04a07ea6be40fd2c799ac5118979.jar" />
+    </item>
+    <item
+        jar="D:\Dropbox\TTY\Demola\SecondScreen.git\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="D:\Dropbox\TTY\Demola\SecondScreen.git\app\build\intermediates\pre-dexed\debug\classes-98b37ff0e458f8eb11d72a4f3c21313ca4b50bb2.jar" />
+    </item>
+    <item
+        jar="D:\Dropbox\TTY\Demola\SecondScreen.git\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="D:\Dropbox\TTY\Demola\SecondScreen.git\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-f7bd4d6f1ffba81223a0091b91131cc03bd91d74.jar" />
     </item>
 
 </items>
