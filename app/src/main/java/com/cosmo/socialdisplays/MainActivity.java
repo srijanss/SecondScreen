@@ -35,6 +35,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.gajah.inkcaseLib.InkCase;
 import com.gajah.inkcaseLib.InkCaseUtils;
+import com.google.android.gms.plus.Plus;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -51,9 +53,10 @@ public class MainActivity extends ActionBarActivity  {
     public final String TAG = "MainActivity";
     public List<Drawable> icons = null;
     public static String currentAppName = null;
-    private BroadcastReceiver mScreenReceiver;
+    TextView debugTextView1 = (TextView) findViewById(R.id.debugtextView);
 
     public static MainActivity instance = null;
+    private BroadcastReceiver mScreenReceiver;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -63,7 +66,8 @@ public class MainActivity extends ActionBarActivity  {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    //SectionsPagerAdapter mSectionsPagerAdapter;
+
+    SectionsPagerAdapter mSectionsPagerAdapter;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -80,7 +84,7 @@ public class MainActivity extends ActionBarActivity  {
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new PlusOneFragment())
                     .commit();
         }
         currentAppName = "";
@@ -101,10 +105,10 @@ public class MainActivity extends ActionBarActivity  {
     private void initialisePaging() {
 
         List<Fragment> fragments = new Vector<Fragment>();
-        fragments.add(Fragment.instantiate(this, PlaceholderFragment.class.getName()));
-        fragments.add(Fragment.instantiate(this, SFragment.class.getName()));
-        fragments.add(Fragment.instantiate(this, TFragment.class.getName()));
-        this.mPagerAdapter  = new PagerAdapter(super.getSupportFragmentManager(), fragments);
+        fragments.add(Fragment.instantiate(this, PlusOneFragment.class.getName()));
+        fragments.add(Fragment.instantiate(this, SecondFragment.class.getName()));
+        fragments.add(Fragment.instantiate(this, ThirdFragment.class.getName()));
+        //this.mPagerAdapter  = new PagerAdapter(super.getSupportFragmentManager(), fragments);
         //
         ViewPager pager = (ViewPager)super.findViewById(R.id.container);
         pager.setAdapter(this.mPagerAdapter);
@@ -138,7 +142,8 @@ public class MainActivity extends ActionBarActivity  {
         }
     }
 
-    /*public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -149,21 +154,22 @@ public class MainActivity extends ActionBarActivity  {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            //return PlaceholderFragment.newInstance(position + 1);
+            // return PlusOneFragment.newInstance(position + 1);
             switch (position) {
                 case 0:
-                    //Fragment for Android Tab
-                    return PlaceholderFragment.newInstance(1);
+                    //Fragment for the main start screen
+                    return PlusOneFragment.newInstance(0);
                 case 1:
-                    //Fragment for Ios Tab
-                    return SecondFragment.newInstance(2);
+                    //Fragment for the buttons screen
+                    return SecondFragment.newInstance(1);
                 case 2:
-                    //Fragment for Windows Tab
-                    return SecondFragment.newInstance(3);
+                    //Fragment for grouping screen
+                    return ThirdFragment.newInstance(2);
 
             }
-            return PlaceholderFragment.newInstance(1);
+            return PlusOneFragment.newInstance(position + 1);
                 }
+
 
         @Override
         public int getCount() {
@@ -189,13 +195,12 @@ public class MainActivity extends ActionBarActivity  {
             return null;
         }
     }
-    */
 
-    private void initialize() {
+
+    public void initialize() {
         // Initialize the broadcast receivers
         getBaseContext().getApplicationContext().sendBroadcast(
                 new Intent("StartupReceiver_Manual_Start"));
-
     }
 
     public void onToggleClicked(View view) { //  checking if toggled on
@@ -322,117 +327,4 @@ public class MainActivity extends ActionBarActivity  {
         return super.onOptionsItemSelected(item);
     }
 
-    public static class PlaceholderFragment extends android.support.v4.app.Fragment {
-
-        /*public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-
-
-            TextView mainTextView1 = (TextView) rootView.findViewById(R.id.main_text_view1);
-            mainTextView1.setText("Use InkCaseCompanion app to connect to the InkCase display.\n");
-            // mainTextView1.append("Use InkCaseCompanion app to connect to the InkCase display.\n");
-            // Commented out to prevent showing the text in double? -MH
-            return rootView;
-        }
-        */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
-
-            }
-
-    public static class SFragment extends android.support.v4.app.Fragment {
-
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public static SFragment newInstance(int sectionNumber) {
-            SFragment fragment = new SFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public SFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_second, container, false);
-            return rootView;
-        }
-
-    }
-    public static class TFragment extends android.support.v4.app.Fragment {
-
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-                public static TFragment newInstance(int sectionNumber) {
-            TFragment fragment = new TFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        ArrayAdapter<String> mSocialAppAdapter;
-
-        public TFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_third, container, false);
-
-            String[] data = {
-                    "Facebook",
-                    "YouTube",
-                    "Skype",
-                    "LinkedIn",
-                    "Tumblr",
-                    "SoundCloud",
-                    "WhatsApp"
-            };
-            List<String> socialApps = new ArrayList<String>(Arrays.asList(data));
-
-            mSocialAppAdapter =
-                    new ArrayAdapter<String>(
-                            getActivity(), // The current context (this activity)
-                            R.layout.list_item_socialapp, // The name of the layout ID.
-                            R.id.list_item_forecast_textview, // The ID of the textview to populate.
-                            socialApps);
-            ListView listView = (ListView) rootView.findViewById(R.id.listView_socialapp);
-            listView.setAdapter(mSocialAppAdapter);
-
-            return rootView;
-        }
-
-    }
 }

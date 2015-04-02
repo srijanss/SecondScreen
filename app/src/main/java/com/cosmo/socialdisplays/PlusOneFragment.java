@@ -1,12 +1,20 @@
 package com.cosmo.socialdisplays;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
+import android.widget.TextView;
 
 
 import com.google.android.gms.plus.PlusOneButton;
@@ -19,7 +27,7 @@ import com.google.android.gms.plus.PlusOneButton;
  * Use the {@link PlusOneFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PlusOneFragment extends Fragment {
+public class PlusOneFragment extends android.support.v4.app.Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -38,6 +46,8 @@ public class PlusOneFragment extends Fragment {
     private PlusOneButton mPlusOneButton;
 
     private OnFragmentInteractionListener mListener;
+    private String title;
+    private int page;
 
     /**
      * Use this factory method to create a new instance of
@@ -64,6 +74,8 @@ public class PlusOneFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        page = getArguments().getInt("someInt", 0);
+        title = getArguments().getString("someTitle");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -74,7 +86,7 @@ public class PlusOneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_plus_one, container, false);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
 
         //Find the +1 button
         mPlusOneButton = (PlusOneButton) view.findViewById(R.id.plus_one_button);

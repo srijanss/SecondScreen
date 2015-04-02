@@ -7,6 +7,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -17,7 +23,7 @@ import android.view.ViewGroup;
  * Use the {@link ThirdFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ThirdFragment extends Fragment {
+public class ThirdFragment extends android.support.v4.app.Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -28,7 +34,7 @@ public class ThirdFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-
+    ArrayAdapter<String> mSocialAppAdapter;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -48,26 +54,39 @@ public class ThirdFragment extends Fragment {
     }
 
     public ThirdFragment() {
-        // Required empty public constructor
-    }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_third, container, false);
+
+        String[] data = {
+                "Facebook",
+                "YouTube",
+                "Skype",
+                "LinkedIn",
+                "Tumblr",
+                "SoundCloud",
+                "WhatsApp"
+        };
+        List<String> socialApps = new ArrayList<String>(Arrays.asList(data));
+
+        mSocialAppAdapter =
+                new ArrayAdapter<String>(
+                        getActivity(), // The current context (this activity)
+                        R.layout.list_item_socialapp, // The name of the layout ID.
+                        R.id.list_item_forecast_textview, // The ID of the textview to populate.
+                        socialApps);
+        ListView listView = (ListView) rootView.findViewById(R.id.listView_socialapp);
+        listView.setAdapter(mSocialAppAdapter);
+
+        return rootView;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+      // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
