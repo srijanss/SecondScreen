@@ -48,7 +48,10 @@ import java.util.Locale;
 import java.util.Vector;
 
 
-public class MainActivity extends ActionBarActivity  {
+abstract class MainActivity extends ActionBarActivity
+        implements PlusOneFragment.OnFragmentInteractionListener,
+        SecondFragment.OnFragmentInteractionListener,
+        ThirdFragment.OnFragmentInteractionListener {
 
     public final String TAG = "MainActivity";
     public List<Drawable> icons = null;
@@ -102,6 +105,8 @@ public class MainActivity extends ActionBarActivity  {
         */
 
     }
+
+
     private void initialisePaging() {
 
         List<Fragment> fragments = new Vector<Fragment>();
